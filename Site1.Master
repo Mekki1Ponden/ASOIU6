@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication2.Site1" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body {
+            margin: 0;
+            padding: 0;
+            background-color:#a38858;
+            color: #ffffff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            padding: 10px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .logo {
+            margin-right: 20px;
+        }
+        .title {
+            text-align: center;
+
+            font-size: 24px;
+            font-weight: bold;
+            padding: 10px;
+            flex: 1;
+        }
+        .form-container {
+            align-self: flex-end;
+
+            padding: 10px;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="password"],
+        .form-container input[type="submit"] {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .links {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Изменено на flex-start */
+            padding: 10px;
+            align-self: flex-start; /* Добавлено */
+            color: #ffffff;
+        }
+        .links a {
+            text-decoration: none;
+            font-size: 20px;
+            padding: 5px;
+            color: #ffffff;
+        }
+        .links a:hover {
+            color: #a77878;
+        }
+        .content {
+            width: 80%; /* Ширина контента */
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container">
+            <div class="header">
+                <div class="logo">
+                    <img id="Image1" src="img/log.png" alt="Logo" style="height: 182px; width: 246px;" />
+                </div>
+                <div class="title">
+                    Театры
+                </div>
+                <div class="form-container">
+                    <asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">Войти</asp:LinkButton>
+                    <input id="Button2" type="submit" runat="server" value="Выйти" />
+                    <input id="Button3" type="submit" runat="server" value="Зарегистрироваться" />
+                </div>
+            </div>
+            <div class="links">
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Главная</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">Новостная лента</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Поиск 1</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">Поиск 2</asp:LinkButton>
+            </div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
